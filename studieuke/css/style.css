@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Lexend:wght@100..900&family=Poiret+One&display=swap');
 
 *{
     box-sizing: border-box;
 }
 body{
-    font-family: "Funnel Sans", sans-serif;
+    font-family: "Lexend", sans-serif;
     margin: 0;
 }
 
@@ -12,6 +12,7 @@ a{
     display: inline-block;
     color: #000;
     text-decoration: none;
+    padding: 1rem;
 }
 
 img{
@@ -31,6 +32,7 @@ img{
     }
 }
 
+
 #hero{
     min-height: 300px;
     display: flex;
@@ -38,30 +40,61 @@ img{
     flex-direction: column;
     padding: 1rem;
     justify-content: center;
-    background-color: #c4c4c4;
+    background-color: #f6f6f6;
 }
 
 .highlight{
-    padding: 1rem;
+    padding: 0rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    >*{
+        width: 50%;
+        min-width: 350px;
+        flex-grow: 1;
+    }
     figure{
         margin: 0;
+        img{
+            height: 100%;
+        }
     }
+    section{
+        padding: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+}
+.hightlight:nth-child(even){
+    flex-direction: row-reverse;
 }
 
 #services{
     display: flex;
     flex-wrap: wrap;
     padding: 1rem;
+    justify-content: center;
+    background-color: #c4c4c4;
 
     h2{
         width: 100%;
+        text-align: center;
     }
+
     .service-card{
-        width: 100%;
+        width: 33%;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        min-width: 250px;
+        flex-grow: 1;
+        /*max-width: 400px;*/
 
         i{
-            width: 50px;
-            height: 50px;
+            min-width: 50px;
+            min-height: 50px;
             padding: 0.5rem;
             border-radius: 100%;
             border: 1px solid #000;
@@ -76,12 +109,30 @@ img{
     background-color: #000;
     padding: 1rem;
     border-radius: 10px;
-    color: white;
+    color: #fff;
 }
 
 .hidden{
     display: none;
 }
+#menu{
+    list-style: none;
+    margin: 0;
+
+    li:first-child{
+        position: absolute;
+        top: 20PX;
+        right: 20px;
+    }
+}
+
+#close{
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+
 .icon-btn{
     background-color: transparent;
     border: none;
@@ -90,6 +141,19 @@ img{
         font-size: 18px;
     }
 }
+
+@media only screen and (min-width:789px){
+    #services{
+        text-align: center;
+    }
+    .service-card{
+        max-width: 450px;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
 @media only screen and (max-width:600px){
     
     /* Menyen vises som "overlay" øverst på hele skjermen */
@@ -121,10 +185,10 @@ img{
 
     /* Menyen tilpasset desktop: liste horisontalt */
     #menu{
-        ul{
+        
             display: flex; /* Viser menyvalg på linje */
             gap: 1rem;     /* Avstand mellom menyvalg */
-        }
+        
     }
 
     /* Hamburger-knappen skjules på større skjermer */
@@ -136,4 +200,7 @@ img{
         display: none;
     }
 
+    .group{
+        display: none;
+    }
 }
